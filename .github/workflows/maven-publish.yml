@@ -2,12 +2,16 @@ name: Master Branch
 
 on:
   push:
-    branches:
-      - 'master'
-
+   tags:
+      - '*'
 jobs:
-
-  test:
+   github-example-tags:
+    steps:
+     - name: GitHub Tag Name example
+       run: |
+         echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+         echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+   test:
     name: Test - Units & Integrations
     runs-on: ubuntu-18.04
 
