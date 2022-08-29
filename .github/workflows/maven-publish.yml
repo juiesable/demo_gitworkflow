@@ -4,7 +4,6 @@ on:
       - 'v*.*.*'
 
 jobs:
-
   test:
     name: Test - Units & Integrations
     runs-on: ubuntu-18.04
@@ -77,3 +76,5 @@ jobs:
         run: mvn --batch-mode deploy -Dmaven.test.skip
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+  
